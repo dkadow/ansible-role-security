@@ -17,6 +17,10 @@ galaxy_info:
   - name: Ubuntu
     versions:
     - all
+  - name: Suse
+    versions:
+    - 13.1
+    - 13.2
   categories:
     - system
     - security

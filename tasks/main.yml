@@ -9,6 +9,9 @@
 - include: fail2ban-Debian.yml
   when: ansible_os_family == 'Debian'
 
+- include: fail2ban-Suse.yml
+  when: ansible_os_family == 'Suse'
+
 - name: Ensure fail2ban is running and enabled on boot.
   service: name=fail2ban state=started enabled=yes
 
@@ -21,3 +24,7 @@
 
 - include: autoupdate-Debian.yml
   when: ansible_os_family == 'Debian' and security_autoupdate_enabled
+
+#- include: autoupdate-Suse.yml
+#  # Suse autoupdate may be enabled by default ( TB Verified )
+#  when: ansible_os_family == 'Suse' and security_autoupdate_enabled
